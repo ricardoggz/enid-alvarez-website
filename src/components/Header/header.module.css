@@ -1,6 +1,6 @@
 .headerWrapper{
     background:var(--black-primary);
-    padding:1rem 0;
+    padding:0.5rem 0;
     width:100%;
 }
 .navElements{
@@ -18,7 +18,7 @@
     text-decoration: none;
 }
 .navImage{
-    height:4rem;
+    height:3rem;
 }
 .navImage img{
     height:100%;

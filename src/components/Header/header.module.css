@@ -1,0 +1,27 @@
+.headerWrapper{
+    background:var(--black-primary);
+    padding:1rem 0;
+    width:100%;
+}
+.navElements{
+    align-items: center;
+    color:var(--white-primary);
+    display:flex;
+    justify-content: space-between;
+}
+.navList{
+    list-style: none;
+}
+.navList a{
+    color:#fff;
+    list-style: none;
+    text-decoration: none;
+}
+.navImage{
+    height:4rem;
+}
+.navImage img{
+    height:100%;
+    object-fit: contain;
+    width:100%;
+}

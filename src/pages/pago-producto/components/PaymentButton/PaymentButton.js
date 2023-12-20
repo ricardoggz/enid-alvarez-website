@@ -3,12 +3,12 @@ import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 
 export const PaymentButton = () => {
   const paypalOptions = {
-    'client-id': 'TU_CLIENT_ID_DE_PAYPAL',
+    'client-id': 'Aar49Y3nJdBHKlVUKHuyiIl7i4pJNd6Uch_zgumwMBZ15_y-oxqfwOhcbUAFBA9E6Op9fdeoY0533qcT',
     currency: 'USD',
   };
 
   const buttonStyle = {
-    layout: 'horizontal',
+    layout: 'vertical',
     color: 'gold',
     shape: 'rect',
     label: 'paypal',
@@ -31,7 +31,9 @@ export const PaymentButton = () => {
   };
 
   return (
-    <PayPalScriptProvider options={paypalOptions}>
+    <PayPalScriptProvider
+    options={paypalOptions}
+    >
       <PayPalButtons
         style={buttonStyle}
         createOrder={createOrder}

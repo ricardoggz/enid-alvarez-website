@@ -1,7 +1,7 @@
-import { SelectProduct } from './components'
+import { SelectProduct } from '../components'
 const Home = () => {
 return (
-  <SelectProduct/>
+  <h1>Home</h1>
 )
 }
 

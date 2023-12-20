@@ -1,4 +1,4 @@
-import { SelectProduct } from "./components/SelectProduct";
+import { SelectProduct } from './components'
 const Home = () => {
 return (
   <SelectProduct/>

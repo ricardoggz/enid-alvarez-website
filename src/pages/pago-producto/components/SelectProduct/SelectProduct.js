@@ -24,15 +24,14 @@ const SelectProduct = () => {
   }
   return (
     <div className={styles.mainContainer}>
-      <h1>{currentProduct.model}</h1>
-      <h2>{currentProduct.price}</h2>
+      <h1>Modelo: {currentProduct.model}</h1>
     <div className={styles.productImage}>
       <img src={currentProduct.image} alt="Producto"/>
     </div>
     <div className={styles.productButtons}>
       {
         products.map((product, index)=>(
-            <label>
+            <label key={index}>
               <button
                 style={{ backgroundColor: product.color }}
                 onClick={() => handleColorChange(product.color)}
@@ -42,8 +41,8 @@ const SelectProduct = () => {
       ))
       }
       </div>
+      <h2>Precio: ${currentProduct.price}</h2>
       <PaymentButton />
-      <span>--Espacio para descripción--</span>
       </div>
   );
 };

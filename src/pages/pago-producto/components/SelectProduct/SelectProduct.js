@@ -1,30 +1,19 @@
 'use client'
 import { useState } from 'react'
+import { products } from '../../consts'
 import { PaymentButton } from '../PaymentButton/PaymentButton'
 import styles from './selectProduct.module.css'
 
 const SelectProduct = () => {
   // Estado para la imagen actual del producto
-  const [currentImage, setCurrentImage] = useState('bolsa-cafe.jpeg');
+  const [currentProduct, setCurrentProduct] = useState(products[0]);
 
   // Función para cambiar la imagen según el color seleccionado
   const handleColorChange = (color) => {
-    // Lógica para asignar la imagen correspondiente al color
-    let newImage;
-    switch (color) {
-      case 'green':
-        newImage = 'bolsa-verde.jpeg';
-        break;
-      case 'brown':
-        newImage = 'bolsa-cafe.jpeg';
-        break;
-      // Añade más casos según sea necesario
-      default:
-        newImage = '../../public/bolsa-cafe.jpeg';
+    const selectedProduct = products.find((product) => product.color === color);
+    if (selectedProduct) {
+      setCurrentProduct(selectedProduct);
     }
-
-    // Actualizar el estado con la nueva imagen
-    setCurrentImage(newImage);
   };
   const greenButton ={
     background: '#6ab04c'
@@ -35,39 +24,27 @@ const SelectProduct = () => {
   }
   return (
     <div className={styles.mainContainer}>
-      {/* Mostrar la imagen actual del producto */}
-      <h1>Sol</h1>
-      <h2>$570.00</h2>
-      <div className={styles.productImage}>
-        <img src={currentImage} alt="Producto"/>
-      </div>
-      {/* Seleccionar un color para cambiar la imagen */}
-      <div className={styles.productButtons}>
-        <label>
-          <button
-            type="radio"
-            name="color"
-            value="green"
-            style={greenButton}
-            onClick={() => handleColorChange('green')}
-          >
-          </button>
-        </label>
-        <label>
-        <button
-            type="radio"
-            name="color"
-            value="green"
-            style={brownButton}
-            onClick={() => handleColorChange('brown')}
-          >
-          </button>
-        </label>
-        {/* Añade más opciones de color según sea necesario */}
+      <h1>{currentProduct.model}</h1>
+      <h2>{currentProduct.price}</h2>
+    <div className={styles.productImage}>
+      <img src={currentProduct.image} alt="Producto"/>
+    </div>
+    <div className={styles.productButtons}>
+      {
+        products.map((product, index)=>(
+            <label>
+              <button
+                style={{ backgroundColor: product.color }}
+                onClick={() => handleColorChange(product.color)}
+              >
+              </button>
+          </label>
+      ))
+      }
       </div>
       <PaymentButton />
       <span>--Espacio para descripción--</span>
-    </div>
+      </div>
   );
 };
 

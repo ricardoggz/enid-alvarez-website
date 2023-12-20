@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react';
+import { useState } from 'react'
+import { PaymentButton } from '../PaymentButton/PaymentButton'
 import styles from './selectProduct.module.css'
 
 const SelectProduct = () => {
@@ -35,10 +36,11 @@ const SelectProduct = () => {
   return (
     <div className={styles.mainContainer}>
       {/* Mostrar la imagen actual del producto */}
+      <h1>Sol</h1>
+      <h2>$570.00</h2>
       <div className={styles.productImage}>
         <img src={currentImage} alt="Producto"/>
       </div>
-
       {/* Seleccionar un color para cambiar la imagen */}
       <div className={styles.productButtons}>
         <label>
@@ -63,7 +65,9 @@ const SelectProduct = () => {
         </label>
         {/* Añade más opciones de color según sea necesario */}
       </div>
-      <span>--Espacio para botón de Paypal--</span>
+      <span>--Espacio para boton de paypal--</span>
+      <span>--Espacio para descripción--</span>
+      <PaymentButton />
     </div>
   );
 };

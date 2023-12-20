@@ -62,8 +62,8 @@ const SelectProduct = () => {
           </button>
         </label>
         {/* Añade más opciones de color según sea necesario */}
-        <span>--Espacio para botón de Paypal--</span>
       </div>
+      <span>--Espacio para botón de Paypal--</span>
     </div>
   );
 };

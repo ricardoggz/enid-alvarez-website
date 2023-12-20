@@ -1,6 +1,9 @@
+import { RootLayout } from "@/components";
 const Home = () => {
 return (
-  <h1>Home</h1>
+  <RootLayout>
+    <h1>Home</h1>
+  </RootLayout>
 )
 }
 

@@ -23,23 +23,10 @@ const SelectProduct = ({products, currentIndexProduct}) => {
     }
   };
   return (
-    <div className={styles.mainContainer}>
+    <>
+      <div className={styles.mainContainer}>
       <div className={styles.productImage}>
       <img src={currentProduct.product_image} alt="Producto"/>
-      <div className={styles.relatedImages}>
-        {
-          products ?
-          images.map((image)=>(
-            <img
-              src={image.imagen_ruta}
-              alt="Producto"
-              key={image.imagen_id}
-              />
-          ))
-          :
-          null
-        }
-      </div>
       </div>
       <div className={styles.productDescription}>
       <h1>Modelo: {currentProduct.product_name}</h1>
@@ -61,6 +48,23 @@ const SelectProduct = ({products, currentIndexProduct}) => {
       <PaymentButton />
       </div>
     </div>
+    <div className={`flexContainer ${styles.relatedImages}`}>
+    {
+      products ?
+      images.map((image)=>(
+        <figure>
+          <img
+          src={image.imagen_ruta}
+          alt="Producto"
+          key={image.imagen_id}
+          />
+        </figure>
+      ))
+      :
+      null
+    }
+    </div>
+    </>
   );
 };
 

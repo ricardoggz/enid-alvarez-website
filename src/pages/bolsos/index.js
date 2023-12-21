@@ -1,4 +1,6 @@
-import { Container, RootLayout } from "@/components";
+import { products } from "./consts";
+import { Container, RootLayout, GridContainer } from "@/components";
+
 export default function Gallery(){
     return(
         <RootLayout>
@@ -6,6 +8,7 @@ export default function Gallery(){
                 <h1 className="title">
                     Bolsos disponibles
                 </h1>
+                <GridContainer products={products}/>
             </Container>
         </RootLayout>
     )

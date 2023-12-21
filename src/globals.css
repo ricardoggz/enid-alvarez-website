@@ -24,6 +24,7 @@ body{
 }
 .title{
     font-size: 2rem;
+    margin-bottom:4rem;
     text-align: center;
 }
 @media(min-width:240px) and (max-width:880px){

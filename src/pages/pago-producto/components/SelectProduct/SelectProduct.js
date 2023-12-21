@@ -1,5 +1,7 @@
 'use client'
 import { useState } from 'react'
+import { CiDeliveryTruck } from "react-icons/ci";
+import { MdOutlinePayment } from "react-icons/md";
 import { PaymentButton } from '../PaymentButton/PaymentButton'
 import styles from './selectProduct.module.css'
 
@@ -46,6 +48,16 @@ const SelectProduct = ({products, currentIndexProduct}) => {
         }
       </div>
       <PaymentButton />
+      <div className={styles.paymentDetails}>
+        <div>
+          <CiDeliveryTruck />
+          <span>Envíos de 6 a 7 días hábiles</span>
+        </div>
+        <div>
+          <MdOutlinePayment />
+          <span>Pagos 100% seguros</span>
+        </div>
+      </div>
       </div>
     </div>
     <div className={`flexContainer ${styles.relatedImages}`}>

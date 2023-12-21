@@ -18,19 +18,19 @@ const SelectProduct = ({products}) => {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.productImage}>
-      <img src={currentProduct.image} alt="Producto"/>
+      <img src={currentProduct.product_image} alt="Producto"/>
       </div>
       <div className={styles.productDescription}>
-      <h1>Modelo: {currentProduct.name}</h1>
-      <h2>Precio: ${currentProduct.price}</h2>
+      <h1>Modelo: {currentProduct.product_name}</h1>
+      <h2>Precio: ${currentProduct.product_price}</h2>
       <span>Colores disponibles</span>
       <div className={styles.productButtons}>
         {
           products.map((product, index)=>(
               <label key={index}>
                 <button
-                  style={{ backgroundColor: product.color }}
-                  onClick={() => handleColorChange(product.color)}
+                  style={{ backgroundColor: product.product_color }}
+                  onClick={() => handleColorChange(product.product_color)}
                 >
                 </button>
             </label>

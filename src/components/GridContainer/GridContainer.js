@@ -15,17 +15,17 @@ export const GridContainer = ({products=[]})=>{
                         <>
                             <Link
                             href='/pago-producto/[id]'
-                            as={`/pago-producto/${product.model}`}
+                            as={`/pago-producto/${product.product_name}`}
                             className={styles.card}
                             key={index}>
                                 <figure>
-                                    <img src={product.image}/>
+                                    <img src={product.product_image}/>
                                 </figure>
                                 <div className={styles.cardDescription}>
                                     <span>
-                                        Modelo: {product.model}
+                                        Modelo: {product.product_name}
                                     </span>
-                                    <span>Precio: ${product.price}</span>
+                                    <span>Precio: ${product.product_price}</span>
                                 </div>
                             </Link>
                         </>

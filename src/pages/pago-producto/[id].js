@@ -1,17 +1,29 @@
 import { useRouter } from 'next/router'
 import '../../globals.css'
 import { products } from './consts'
+import { useFetch } from '@/hooks'
 import { SelectProduct } from './components/SelectProduct/SelectProduct'
 import { RootLayout, Container } from '@/components'
 export default function Gallery({filteredProducts}){
+  const [loading, data] = useFetch({
+    url: 'http://localhost:3030/api/products/all-products'
+  })
   const router = useRouter()
   const {id} = router.query
-  const newProducts = products.filter((product)=>product.model == id)
-  .map(product=>product)
+  let newProducts
+  if(data){
+    newProducts=data.data.filter((product)=>product.product_name == id)
+    .map(product=>product)
+  }
     return(
         <RootLayout>
             <Container>
-                <SelectProduct products={newProducts}/>
+                {
+                  newProducts ?
+                  <SelectProduct products={newProducts}/>
+                  :
+                  null
+                }
             </Container>
         </RootLayout>
     )

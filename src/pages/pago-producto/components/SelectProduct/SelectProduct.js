@@ -3,9 +3,9 @@ import { useState } from 'react'
 import { PaymentButton } from '../PaymentButton/PaymentButton'
 import styles from './selectProduct.module.css'
 
-const SelectProduct = ({products}) => {
+const SelectProduct = ({products, currentIndexProduct}) => {
   // Estado para la imagen actual del producto
-  const [currentProduct, setCurrentProduct] = useState(products[0]);
+  const [currentProduct, setCurrentProduct] = useState(products[currentIndexProduct]);
   //Debe exisitir un filtrado para productos del mismo modelo
   let filteredData
   if(products){

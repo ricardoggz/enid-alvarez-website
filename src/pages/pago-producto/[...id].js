@@ -12,7 +12,7 @@ export default function Gallery({filteredProducts}){
   const {id} = router.query
   let newProducts
   if(data){
-    newProducts=data.data.filter((product)=>product.model_id == id)
+    newProducts=data.data.filter((product)=>product.model_id == id[0])
     .map(product=>product)
   }
     return(
@@ -20,7 +20,10 @@ export default function Gallery({filteredProducts}){
             <Container>
                 {
                   newProducts ?
-                  <SelectProduct products={newProducts}/>
+                  <SelectProduct
+                    products={newProducts}
+                    currentIndexProduct={id[1]}
+                  />
                   :
                   null
                 }

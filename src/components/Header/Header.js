@@ -8,7 +8,7 @@ export const Header = ()=>{
             <nav className={`flexContainer ${styles.navElements}`}>
                 <figure className={styles.navImage}>
                     <Link href='/'>
-                    <img src='logo-mediano-grande.jpg' />
+                    <img src='http://enidalvarez.store/wp-content/uploads/2022/08/logo-mediano-grande.jpg' />
                     </Link>
                 </figure>
                 <ul className={styles.navList}>

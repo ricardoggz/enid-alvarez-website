@@ -4,7 +4,7 @@ import { products } from '../../consts'
 import { PaymentButton } from '../PaymentButton/PaymentButton'
 import styles from './selectProduct.module.css'
 
-const SelectProduct = () => {
+const SelectProduct = ({products}) => {
   // Estado para la imagen actual del producto
   const [currentProduct, setCurrentProduct] = useState(products[0]);
 

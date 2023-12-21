@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import styles from './grid.module.css'
 
 export const GridContainer = ({products=[]})=>{
@@ -12,7 +13,11 @@ export const GridContainer = ({products=[]})=>{
                 {
                     products.map((product, index)=>(
                         <>
-                            <a href='/' className={styles.card} key={index}>
+                            <Link
+                            href='/pago-producto/[id]'
+                            as={`/pago-producto/${product.category}`}
+                            className={styles.card}
+                            key={index}>
                                 <figure>
                                     <img src={product.image}/>
                                 </figure>
@@ -22,7 +27,7 @@ export const GridContainer = ({products=[]})=>{
                                     </span>
                                     <span>Precio: ${product.price}</span>
                                 </div>
-                            </a>
+                            </Link>
                         </>
                     ))
                 }

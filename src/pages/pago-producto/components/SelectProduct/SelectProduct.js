@@ -21,7 +21,7 @@ const SelectProduct = ({products}) => {
       <img src={currentProduct.image} alt="Producto"/>
       </div>
       <div className={styles.productDescription}>
-      <h1>Modelo: {currentProduct.model}</h1>
+      <h1>Modelo: {currentProduct.name}</h1>
       <h2>Precio: ${currentProduct.price}</h2>
       <span>Colores disponibles</span>
       <div className={styles.productButtons}>

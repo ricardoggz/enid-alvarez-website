@@ -22,6 +22,11 @@ export const Header = ()=>{
                             Bolsos
                         </Link>
                     </li>
+                    <li>
+                        <Link href='/hilos'>
+                            Hilos
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </header>

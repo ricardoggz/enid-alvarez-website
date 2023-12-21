@@ -1,24 +1,27 @@
 'use client'
 import { useState } from 'react'
-import { products } from '../../consts'
 import { PaymentButton } from '../PaymentButton/PaymentButton'
 import styles from './selectProduct.module.css'
 
 const SelectProduct = ({products}) => {
   // Estado para la imagen actual del producto
   const [currentProduct, setCurrentProduct] = useState(products[0]);
+  //Debe exisitir un filtrado para productos del mismo modelo
+  let filteredData
+  if(products){
+    filteredData = products.filter(product=>product.model_id === 1)
+  }
+  let images
+  if(products){
+    images = JSON.parse(currentProduct.images)
+  }
   // Función para cambiar la imagen según el color seleccionado
   const handleColorChange = (color) => {
-    const selectedProduct = products.find((product) => product.color === color);
+    const selectedProduct = products.find((product) => product.product_color === color);
     if (selectedProduct) {
       setCurrentProduct(selectedProduct);
     }
   };
-  let images
-  if(products){
-    images = JSON.parse(products[0].images)
-    console.log(images)
-  }
   return (
     <div className={styles.mainContainer}>
       <div className={styles.productImage}>

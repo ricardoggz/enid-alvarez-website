@@ -15,7 +15,7 @@ export const GridContainer = ({products=[]})=>{
                         <>
                             <Link
                             href='/pago-producto/[id]'
-                            as={`/pago-producto/${product.product_name}`}
+                            as={`/pago-producto/${product.model_id}`}
                             className={styles.card}
                             key={index}>
                                 <figure>

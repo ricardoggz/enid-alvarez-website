@@ -12,7 +12,7 @@ export default function Gallery({filteredProducts}){
   const {id} = router.query
   let newProducts
   if(data){
-    newProducts=data.data.filter((product)=>product.product_name == id)
+    newProducts=data.data.filter((product)=>product.model_id == id)
     .map(product=>product)
   }
     return(

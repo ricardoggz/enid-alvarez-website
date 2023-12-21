@@ -12,9 +12,16 @@ export const Header = ()=>{
                     </Link>
                 </figure>
                 <ul className={styles.navList}>
-                    <Link href='/'>
-                        <li>Inicio</li>
-                    </Link>
+                    <li>
+                        <Link href='/'>
+                            Inicio
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href='/bolsos'>
+                            Bolsos
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </header>

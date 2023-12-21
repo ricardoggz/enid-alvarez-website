@@ -1,19 +1,22 @@
 .headerWrapper{
-    background:var(--black-primary);
-    padding:0.5rem 0;
+    background:var(--white-primary);
+    padding:0.3rem 0;
+    position: fixed;
     width:100%;
 }
 .navElements{
     align-items: center;
-    color:var(--white-primary);
+    color:var(--blue-primary);
     display:flex;
     justify-content: space-between;
 }
 .navList{
+    display:flex;
+    gap:1rem;
     list-style: none;
 }
 .navList a{
-    color:#fff;
+    color:var(--blue-primary);
     list-style: none;
     text-decoration: none;
 }

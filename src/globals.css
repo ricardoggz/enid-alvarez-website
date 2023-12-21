@@ -5,15 +5,17 @@
     box-sizing: border-box;
 }
 body{
-    background: var(--white-primary);
+    background: var(--white-secondary);
     color:var(--black-primary);
     font-family: 'Kalnia', serif;
+    font-weight: 400;
 }
 
 :root{
     --blue-primary:#143b4b;
     --black-primary:#0a252b;
-    --white-primary:#e7eff0;
+    --white-primary:#ffffff;
+    --white-secondary:#f9f9f9;
     --gray-primary:#687d85;
     --box-shadow:#00000044;
 }
@@ -24,6 +26,7 @@ body{
 }
 .title{
     font-size: 2rem;
+    font-weight: 300;
     margin-bottom:4rem;
     text-align: center;
 }

@@ -3,29 +3,28 @@ import '../../globals.css'
 import { products } from './consts'
 import { SelectProduct } from './components/SelectProduct/SelectProduct'
 import { RootLayout, Container } from '@/components'
-export default function Gallery({products}){
+export default function Gallery({filteredProducts}){
   const router = useRouter()
-  console.log(products)
   const {id} = router.query
-  console.log(id)
+  const newProducts = products.filter((product)=>product.model == id)
+  .map(product=>product)
     return(
         <RootLayout>
             <Container>
-                <SelectProduct products={products}/>
+                <SelectProduct products={newProducts}/>
             </Container>
         </RootLayout>
     )
 }
 
 export async function getServerSideProps({ params }) {
-    // Lógica para obtener datos basados en el parámetro de la ruta dinámica
-    /*const data = await fetchData(params.id);
-  
-    // Los datos obtenidos se pasan como props a la página
-    */
+    let filteredProducts = products.filter((product)=>{
+      product.id == params.id
+    })
+    .map((product)=>product)
     return {
       props: {
-        products,
+        filteredProducts,
       },
     };
   }

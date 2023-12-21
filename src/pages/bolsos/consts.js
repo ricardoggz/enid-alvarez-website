@@ -1,30 +1,20 @@
 export const products=[
     {
         color: '#6ab04c',
-        image:'bolsa-verde.jpeg',
-        model: 'Sol',
+        image:'http://enidalvarez.store/wp-content/uploads/2023/04/photo1680980564-8.jpeg',
+        name: 'Sol',
+        model:'sol',
         price: 599,
-        category:1
+        category:1,
+        id:1
     },
     {
         color: '#cd6133',
-        image:'bolsa-cafe.jpeg',
-        model: 'Sol',
+        image:'http://enidalvarez.store/wp-content/uploads/2023/04/photo1680980570-1.jpeg',
+        name: 'Tiramisú',
+        model:'tiramisu',
         price: 599,
-        category:1
-    },
-    {
-        color: '#6ab04c',
-        image:'bolsa-verde.jpeg',
-        model: 'Sol',
-        price: 599,
-        category:1
-    },
-    {
-        color: '#cd6133',
-        image:'bolsa-cafe.jpeg',
-        model: 'Sol',
-        price: 599,
-        category:1
+        category:1,
+        id:2
     }
 ]

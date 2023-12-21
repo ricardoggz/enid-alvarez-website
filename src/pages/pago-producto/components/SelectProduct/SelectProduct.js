@@ -15,13 +15,6 @@ const SelectProduct = ({products}) => {
       setCurrentProduct(selectedProduct);
     }
   };
-  const greenButton ={
-    background: '#6ab04c'
-  }
-
-  const brownButton={
-    background: '#cd6133'
-  }
   return (
     <div className={styles.mainContainer}>
       <div className={styles.productImage}>

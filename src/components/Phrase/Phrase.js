@@ -16,8 +16,6 @@ export const Phrase = ()=>{
                         Una de las razones por las cuales el crochet ha cobrado auge,
                         es por la maravillosa oportunidad que nos da de sentirnos plenos y contentos. 
                     </p>
-                </div>
-                <div className={styles.percentages}>
                     <span>
                         <span className={styles.icon}><CiHeart /></span>
                         Menor depresión 70%</span>
@@ -28,6 +26,9 @@ export const Phrase = ()=>{
                         <span className={styles.icon}><HiOutlineBellAlert/></span>
                         Mayor concentración 80%
                     </span>
+                </div>
+                <div>
+                    <img src='tejiendo.jpeg'/>
                 </div>
             </div>
         </Container>

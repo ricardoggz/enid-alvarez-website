@@ -1,6 +1,32 @@
 .jumbotron{
     align-items: center;
+    background: url('../../../public/textura-bg.jpg') center;
+    color:var(--white-primary);
     display:flex;
     justify-content: center;
-    height:50vh;
+}
+.jumbotronTitles{
+    align-items: center;
+    background: #0058bc6a;
+    color:var(--white-primary);
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    height:80vh;
+    justify-content: center;
+    width:100%;
+}
+.jumbotronTitle{
+    font-size:2rem;
+}
+.jumbotronButtons{
+    display:flex;
+    justify-content: center;
+}
+.jumbotronButtons a{
+    background: var(--white-primary);
+    color:var(--black-primary);
+    padding:0.5rem;
+    text-decoration: none;
+    width:100%;
 }

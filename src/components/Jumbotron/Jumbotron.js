@@ -1,12 +1,19 @@
-import { Container } from "../../components"
+import Link from 'next/link'
 import styles from './jumbotron.module.css'
 
 export const Jumbotron = ()=>{
     return(
-        <Container>
-            <div className={styles.jumbotron}>
-            <h1>Bolsos a crochet</h1>
+        <section className={styles.jumbotron}>
+            <div className={styles.jumbotronTitles}>
+                <span className={styles.jumbotronTitle}>
+                    Enid Alvarez, bolsos a crochet
+                </span>
+                <div className={styles.jumbotronButtons}>
+                    <Link href='/bolsos'>
+                        Ver bolsos
+                    </Link>
+                </div>
             </div>
-        </Container>
+        </section>
     )
 }

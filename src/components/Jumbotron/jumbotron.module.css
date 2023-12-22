@@ -5,16 +5,29 @@
     display:flex;
     justify-content: center;
 }
-.jumbotronTitles{
+.jumbotronMask{
     align-items: center;
-    background: #0058bc6a;
+    background: #5027008b;
     color:var(--white-primary);
     display:flex;
     flex-direction: column;
     gap:1rem;
-    height:80vh;
+    height:50vh;
     justify-content: center;
     width:100%;
+}
+.jumbotronTitles{
+    align-items: center;
+    border-radius: 10px;
+    background: #ffffffc2;
+    color:var(--blue-primary);
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    justify-content: center;
+    padding:3rem;
+    width:auto;
+    text-align:center;
 }
 .jumbotronTitle{
     font-size:2rem;
@@ -24,9 +37,15 @@
     justify-content: center;
 }
 .jumbotronButtons a{
-    background: var(--white-primary);
-    color:var(--black-primary);
+    background: var(--blue-primary);
+    color:var(--white-primary);
     padding:0.5rem;
     text-decoration: none;
     width:100%;
+}
+
+@media (min-width:240px) and (max-width:880px){
+    .jumbotronTitles{
+        width:90%;
+    }
 }

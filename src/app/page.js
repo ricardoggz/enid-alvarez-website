@@ -1,9 +1,10 @@
-import { RootLayout, Jumbotron, Phrase } from "@/components";
+import { RootLayout, Jumbotron, Phrase, Testimonials } from "@/components";
 const Home = () => {
 return (
   <RootLayout>
     <Jumbotron />
     <Phrase />
+    <Testimonials />
   </RootLayout>
 )
 }

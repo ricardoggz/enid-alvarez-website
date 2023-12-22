@@ -1,6 +1,6 @@
 import { useFetch } from "@/hooks";
 import { products } from "./consts";
-import { Container, RootLayout, GridContainer } from "@/components";
+import { Container, RootLayout, GridContainer, Loader } from "@/components";
 
 export default function Gallery(){
     const [loading, data] = useFetch({
@@ -18,10 +18,10 @@ export default function Gallery(){
                     Bolsos disponibles
                 </h1>
                 {
-                   data ?
+                   !loading ?
                    <GridContainer products={filteredData}/>
                    :
-                   null 
+                  <Loader /> 
                 }
             </Container>
         </RootLayout>

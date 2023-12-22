@@ -1,6 +1,6 @@
 import { products } from "./consts";
 import { useFetch } from "@/hooks";
-import { Container, RootLayout, GridContainer } from "@/components";
+import { Container, RootLayout, GridContainer, Loader } from "@/components";
 
 export default function Threads(){
     const [loading, data] = useFetch({
@@ -17,7 +17,12 @@ export default function Threads(){
                 <h1 className="title">
                     Hilos disponibles
                 </h1>
-                <GridContainer products={filteredData}/>
+                {
+                    !loading ?
+                    <GridContainer products={filteredData}/>
+                    :
+                    <Loader/>
+                }
             </Container>
         </RootLayout>
     )

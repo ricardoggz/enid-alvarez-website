@@ -1,7 +1,6 @@
 .headerWrapper{
     background:var(--white-primary);
     padding:0.3rem 0;
-    position: fixed;
     width:100%;
     z-index:0;
 }

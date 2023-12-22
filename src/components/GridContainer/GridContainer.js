@@ -22,10 +22,12 @@ export const GridContainer = ({products=[]})=>{
                                     <img src={product.product_image}/>
                                 </figure>
                                 <div className={styles.cardDescription}>
-                                    <span>
+                                    <span className={styles.cardTitle}>
                                         Modelo: {product.product_name}
                                     </span>
-                                    <span>Precio: ${product.product_price}</span>
+                                    <span className={styles.cardSubTitle}>
+                                        Precio: ${product.product_price}
+                                    </span>
                                 </div>
                             </Link>
                         </>

@@ -6,7 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "next build && next export --out=out"
+    "build": "next build"
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^8.1.3",

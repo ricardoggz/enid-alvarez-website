@@ -73,3 +73,15 @@
 .paymentDetails svg{
     font-size: 3rem;
 }
+
+@media (min-width:240px) and (max-width:880px){
+    .mainContainer{
+        flex-direction: column;
+    }
+    .paymentDetails{
+        grid-template-columns: 1fr;
+    }
+    .relatedImages{
+        grid-template-columns: 1fr;
+    }
+}

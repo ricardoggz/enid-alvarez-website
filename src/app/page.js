@@ -1,8 +1,9 @@
-import { RootLayout, Jumbotron } from "@/components";
+import { RootLayout, Jumbotron, Phrase } from "@/components";
 const Home = () => {
 return (
   <RootLayout>
     <Jumbotron />
+    <Phrase />
   </RootLayout>
 )
 }

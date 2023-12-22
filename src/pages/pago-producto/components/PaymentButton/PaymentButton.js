@@ -1,7 +1,7 @@
 'use client'
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 
-export const PaymentButton = () => {
+const PaymentButton = () => {
   const paypalOptions = {
     'client-id': 'Aar49Y3nJdBHKlVUKHuyiIl7i4pJNd6Uch_zgumwMBZ15_y-oxqfwOhcbUAFBA9E6Op9fdeoY0533qcT',
     currency: 'USD',
@@ -42,3 +42,5 @@ export const PaymentButton = () => {
     </PayPalScriptProvider>
   );
 };
+
+export default PaymentButton

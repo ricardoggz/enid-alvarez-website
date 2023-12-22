@@ -1,10 +1,9 @@
-import { products } from "./consts";
 import { useFetch } from "@/hooks";
 import { Container, RootLayout, GridContainer, Loader } from "@/components";
 
 export default function Threads(){
     const [loading, data] = useFetch({
-        url: 'http://localhost:3030/api/products/all-products'
+        url: `${process.env.BASE_URL_API}api/products/all-products`
     })
     /*Existe un filtrado para bolsos*/
     let filteredData

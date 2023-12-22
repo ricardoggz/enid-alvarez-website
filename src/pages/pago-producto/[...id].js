@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
 import '../../globals.css'
-import { products } from './consts'
+import {products} from './consts'
 import { useFetch } from '@/hooks'
-import { SelectProduct } from './components/SelectProduct/SelectProduct'
+import SelectProduct from './components/SelectProduct/SelectProduct'
 import { RootLayout, Container } from '@/components'
 export default function Gallery({filteredProducts}){
   const [loading, data] = useFetch({
-    url: 'http://localhost:3030/api/products/all-products'
+    url: `${process.env.BASE_URL_API}api/products/all-products`
   })
   const router = useRouter()
   const {id} = router.query
@@ -32,7 +32,7 @@ export default function Gallery({filteredProducts}){
     )
 }
 
-export async function getServerSideProps({ params }) {
+export async function getSaticProps({ params }) {
     let filteredProducts = products.filter((product)=>{
       product.id == params.id
     })

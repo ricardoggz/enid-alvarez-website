@@ -1,4 +1,4 @@
-export const products=[
+const products=[
     {
         color: '#6ab04c',
         image:'http://enidalvarez.store/wp-content/uploads/2023/04/photo1680980564-8.jpeg',
@@ -36,3 +36,9 @@ export const products=[
         id:4
     }
 ]
+
+export {products}
+
+export default function Component (){
+    return <h1>Component</h1>
+}

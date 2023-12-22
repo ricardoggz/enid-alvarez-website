@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { CiDeliveryTruck } from "react-icons/ci";
 import { MdOutlinePayment } from "react-icons/md";
-import { PaymentButton } from '../PaymentButton/PaymentButton'
+import PaymentButton from '../PaymentButton/PaymentButton'
 import styles from './selectProduct.module.css'
 
 const SelectProduct = ({products, currentIndexProduct}) => {
@@ -80,4 +80,4 @@ const SelectProduct = ({products, currentIndexProduct}) => {
   );
 };
 
-export {SelectProduct};
+export default SelectProduct

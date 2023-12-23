@@ -1,15 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output:'export',
     // Configura la carpeta donde se encuentran las páginas
-    /*pagesDir: './src/pages',
+    /*pagesDir: './src/pages',*/
     generateStaticParams(){
         return {
           '/': { page : '/'},
           '/bolsos': { page : '/bolsos'},
           '/hilos': { page : '/hilos'},
-          '/pago-producto': { page : '/pago-producto/[...id]'}  
+          '/pago-producto': { page : '/pago-producto/[id]'}  
         }
-      },*/
+      },
       env:{
         BASE_URL_API: 'https://enid-alvarez-web-server.vercel.app/',
       }

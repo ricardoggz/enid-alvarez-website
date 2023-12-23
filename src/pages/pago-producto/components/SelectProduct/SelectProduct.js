@@ -5,16 +5,16 @@ import { MdOutlinePayment } from "react-icons/md";
 import PaymentButton from '../PaymentButton/PaymentButton'
 import styles from './selectProduct.module.css'
 
-const SelectProduct = ({products, currentIndexProduct}) => {
+const SelectProduct = ({products=[]}) => {
   // Estado para la imagen actual del producto
-  const [currentProduct, setCurrentProduct] = useState(products[currentIndexProduct]);
+  const [currentProduct, setCurrentProduct] = useState(products[0]);
   //Debe exisitir un filtrado para productos del mismo modelo
-  let filteredData
+  /*let filteredData
   if(products){
-    filteredData = products.filter(product=>product.model_id === 1)
-  }
+    filteredData = products.filter(product=>product.product_id === 1)
+  }*/
   let images
-  if(products){
+  if(products.length!==0){
     images = JSON.parse(currentProduct.images)
   }
   // Función para cambiar la imagen según el color seleccionado
@@ -26,6 +26,10 @@ const SelectProduct = ({products, currentIndexProduct}) => {
   };
   return (
     <>
+      {
+        products.length!==0
+        ?
+        <>
       <div className={styles.mainContainer}>
       <div className={styles.productImage}>
       <img src={currentProduct.product_image} alt="Producto"/>
@@ -36,6 +40,9 @@ const SelectProduct = ({products, currentIndexProduct}) => {
       <span>Colores disponibles</span>
       <div className={styles.productButtons}>
         {
+          !products 
+          ? null
+          :
           products.map((product, index)=>(
               <label key={index}>
                 <button
@@ -76,6 +83,10 @@ const SelectProduct = ({products, currentIndexProduct}) => {
       null
     }
     </div>
+    </>
+    :
+    null
+    }
     </>
   );
 };

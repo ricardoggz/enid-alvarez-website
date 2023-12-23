@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
 import '../../globals.css'
-import {products} from './consts'
 import { useFetch } from '@/hooks'
 import SelectProduct from './components/SelectProduct/SelectProduct'
 import { RootLayout, Container } from '@/components'
@@ -12,7 +11,7 @@ export default function Gallery({filteredProducts}){
   const {id} = router.query
   let newProducts
   if(data){
-    newProducts=data.data.filter((product)=>product.model_id == id[0])
+    newProducts=data.data.filter((product)=>product.product_id == id)
     .map(product=>product)
   }
     return(
@@ -31,15 +30,25 @@ export default function Gallery({filteredProducts}){
         </RootLayout>
     )
 }
-
-export async function getSaticProps({ params }) {
-    let filteredProducts = products.filter((product)=>{
-      product.id == params.id
-    })
-    .map((product)=>product)
+export const getStaticPaths = async()=>{
+  const response = await fetch(`${process.env.BASE_URL_API}api/products/all-products`)
+  const json = await response.json()
+  const paths = json.map((product) => ({
+    params: { id: product.product_id.toString() },
+  }));
+  return {
+      paths,
+      fallback: false
+  }
+}
+export const getStaticProps =async({ params })=> {
+  const response = await fetch(`${process.env.BASE_URL_API}api/products/all-products`)
+  const json = await response.json()
+  const data=json.filter((product)=>product.product_id == params.id)
+  .map((product) =>product)
     return {
       props: {
-        filteredProducts,
+        data,
       },
     };
   }

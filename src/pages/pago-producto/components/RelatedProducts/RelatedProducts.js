@@ -7,7 +7,9 @@ const RelatedProducts = ({products, category_id})=>{
     const router = useRouter()
     const handleClick = () => {
         // Recargar la página
-        router.reload();
+        setTimeout(()=>{
+            router.reload();
+        },300)
     };
     let relatedProducts
     if(products){

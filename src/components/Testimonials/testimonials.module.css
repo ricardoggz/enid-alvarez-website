@@ -1,5 +1,12 @@
 .testimonialWrapper{
     line-height: 2rem;
-    padding:3rem 0;
     text-align: center;
+}
+.customPrevArrow{
+  width: 50px; /* Ajusta el ancho según tus necesidades */
+  height: 50px; /* Ajusta la altura según tus necesidades */
+  color: #fff; /* Color del texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

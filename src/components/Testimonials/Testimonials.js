@@ -22,12 +22,23 @@ export const Testimonials = () => {
     // Agrega más testimonios según sea necesario
   ];
 
+  const CustomPrevArrow = (props) => (
+    <div {...props} className={styles.customPrevArrow}>
+    </div>
+  );
+
+  const CustomNextArrow = (props) => (
+    <div {...props} className={styles.customPrevArrow}>
+    </div>
+  );
   const settings = {
-    dots: true,
+    dots: true, // Desactiva los puntos indicadores
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    prevArrow: <CustomPrevArrow />, // Componente personalizado para la flecha anterior
+    nextArrow: <CustomNextArrow />, // Componente personalizado para la flecha siguiente
   };
 
   return (
@@ -37,8 +48,9 @@ export const Testimonials = () => {
         </h3>
             <Slider {...settings}>
                 {testimonials.map((testimonial) => (
-                    <div className={`${styles.testimonialWrapper}`}>
+                    <div className={`${styles.testimonialWrapper}`} key={testimonial.id}>
                       <p>{testimonial.title}</p>
+                      <p>{testimonial.text}</p>
                       <p>- {testimonial.author}</p>
                     </div>
                 ))}

@@ -5,7 +5,7 @@ import SelectProduct from './components/SelectProduct/SelectProduct'
 import { RootLayout, Container } from '@/components'
 export default function Gallery({filteredProducts}){
   const [loading, data] = useFetch({
-    url: `${process.env.BASE_URL_API}api/products/all-bags`
+    url: `${process.env.BASE_URL_API}api/products/all-products`
   })
   const router = useRouter()
   const {id} = router.query
@@ -30,7 +30,7 @@ export default function Gallery({filteredProducts}){
     )
 }
 export const getStaticPaths = async()=>{
-  const response = await fetch(`${process.env.BASE_URL_API}api/products/all-bags`)
+  const response = await fetch(`${process.env.BASE_URL_API}api/products/all-products`)
   const json = await response.json()
   const paths = json.map((product) => ({
     params: { id: product.product_id.toString() },
@@ -41,7 +41,7 @@ export const getStaticPaths = async()=>{
   }
 }
 export const getStaticProps =async({ params })=> {
-  const response = await fetch(`${process.env.BASE_URL_API}api/products/all-bags`)
+  const response = await fetch(`${process.env.BASE_URL_API}api/products/all-products`)
   const json = await response.json()
   const data=json.filter((product)=>product.product_id == params.id)
   .map((product) =>product)

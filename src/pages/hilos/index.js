@@ -3,13 +3,13 @@ import { Container, RootLayout, GridContainer, Loader } from "@/components";
 
 export default function Threads(){
     const [loading, data] = useFetch({
-        url: `${process.env.BASE_URL_API}api/products/all-products`
+        url: `${process.env.BASE_URL_API}api/products/all-threads`
     })
     /*Existe un filtrado para bolsos*/
-    let filteredData
+    /*let filteredData
     if(data){
         filteredData = data.data.filter((product)=> product.category_id === 2)
-    }
+    }*/
     return(
         <RootLayout>
             <Container>
@@ -18,7 +18,7 @@ export default function Threads(){
                 </h1>
                 {
                     !loading ?
-                    <GridContainer products={filteredData}/>
+                    <GridContainer products={data.data}/>
                     :
                     <Loader/>
                 }

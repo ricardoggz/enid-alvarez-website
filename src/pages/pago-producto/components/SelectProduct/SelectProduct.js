@@ -32,11 +32,33 @@ const SelectProduct = ({products=[]}) => {
         <>
       <div className={styles.mainContainer}>
       <div className={styles.productImage}>
-      <img src={currentProduct.product_image} alt="Producto"/>
+      {
+        currentProduct.bag_image ?
+        <img src={currentProduct.bag_image} alt="Producto"/>
+        :
+        null
+      }
+      {
+        currentProduct.thread_image ?
+        <img src={currentProduct.thread_image} alt="Producto"/>
+        :
+        null
+      }
       </div>
       <div className={styles.productDescription}>
       <h1>Modelo: {currentProduct.product_name}</h1>
-      <h2>Precio: ${currentProduct.product_price}</h2>
+      {
+        currentProduct.bag_price ?
+        <h2>Precio: ${currentProduct.bag_price}</h2>
+        :
+        null
+      }
+      {
+        currentProduct.thread_price ?
+        <h2>Precio: ${currentProduct.thread_price}</h2>
+        :
+        null
+      }
       <span>Colores disponibles</span>
       <div className={styles.productButtons}>
         {
@@ -86,7 +108,7 @@ const SelectProduct = ({products=[]}) => {
     </>
     :
     null
-    }
+  }
     </>
   );
 };

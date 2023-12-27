@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import '../../globals.css'
 import { useFetch } from '@/hooks'
 import SelectProduct from './components/SelectProduct/SelectProduct'
+import RelatedProducts from './components/RelatedProducts/RelatedProducts'
 import { RootLayout, Container } from '@/components'
 export default function Gallery({filteredProducts}){
   const [loading, data] = useFetch({
@@ -19,9 +20,15 @@ export default function Gallery({filteredProducts}){
             <Container>
                 {
                   newProducts ?
-                  <SelectProduct
+                  <>
+                    <SelectProduct
                     products={newProducts}
-                  />
+                    />
+                    <RelatedProducts
+                      products={data.data}
+                      category_id={newProducts[0].category_id}
+                    />
+                  </>
                   :
                   null
                 }

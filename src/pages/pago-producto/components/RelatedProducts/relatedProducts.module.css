@@ -1,0 +1,30 @@
+.relatedProducts{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:1rem;
+}
+.relatedProductCard{
+    box-shadow: 1px 2px 10px var(--box-shadow);
+    color:var(--blue-primary);
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    padding:1rem;
+    text-decoration: none;
+    width:100%;
+}
+.relatedProductCard figure{
+    width:100%;
+    height: 300px;
+}
+.relatedProductCard img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width:240px) and (max-width:880px){
+    .relatedProducts{
+        grid-template-columns: 1fr;
+    }
+}

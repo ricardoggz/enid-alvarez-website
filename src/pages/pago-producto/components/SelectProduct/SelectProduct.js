@@ -44,6 +44,12 @@ const SelectProduct = ({products=[]}) => {
         :
         null
       }
+      {
+        currentProduct.kit_image ?
+        <img src={currentProduct.kit_image} alt="Producto"/>
+        :
+        null
+      }
       </div>
       <div className={styles.productDescription}>
       <h1>Modelo: {currentProduct.product_name}</h1>
@@ -56,6 +62,12 @@ const SelectProduct = ({products=[]}) => {
       {
         currentProduct.thread_price ?
         <h2>Precio: ${currentProduct.thread_price}</h2>
+        :
+        null
+      }
+      {
+        currentProduct.kit_price ?
+        <h2>Precio: ${currentProduct.kit_price}</h2>
         :
         null
       }

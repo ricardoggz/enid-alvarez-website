@@ -43,6 +43,11 @@ export const Header = ()=>{
                             Hilos
                         </Link>
                     </li>
+                    <li>
+                        <Link href='/kits'>
+                            Kits
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         </header>
